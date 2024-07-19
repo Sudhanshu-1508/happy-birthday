@@ -1,27 +1,30 @@
 // Import the data to customize and insert them into page
 const fetchData = () => {
   fetch("customize.json")
-    .then(data => data.json())
+    .then(response => response.json())
     .then(data => {
-      dataArr = Object.keys(data);
-      dataArr.map(customData => {
-        if (data[customData] !== "") {
-          if (customData === "imagePath") {
-            document
-              .querySelector(`[data-node-name*="${customData}"]`)
-              .setAttribute("src", data[customData]);
-          } else {
-            document.querySelector(`[data-node-name*="${customData}"]`).innerText = data[customData];
+      const dataArr = Object.keys(data);
+      let elementsPopulated = 0;
+
+      dataArr.forEach(customData => {
+        const element = document.querySelector(`[data-node-name*="${customData}"]`);
+
+        if (element) {
+          if (customData === "imagePath" && data[customData]) {
+            element.setAttribute("src", data[customData]);
+          } else if (data[customData]) {
+            element.innerText = data[customData];
           }
         }
 
-        // Check if the iteration is over
-        // Run amimation if so
-        if ( dataArr.length === dataArr.indexOf(customData) + 1 ) {
+        elementsPopulated += 1;
+
+        if (elementsPopulated === dataArr.length) {
           animationTimeline();
-        } 
+        }
       });
-    });
+    })
+    .catch(error => console.error('Error fetching data:', error));
 };
 
 // Animation Timeline
