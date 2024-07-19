@@ -2,7 +2,9 @@
   "greeting": "Hiya",
   "name": "Vishakha",
   "greetingText": "I really like your name btw!",
-  "wishText": "Love ya! :)",
+  "wishText": "
+My Pookie Dookie
+Love ya! :)",
   "imagePath": "img/v.png",
   "text1": "It's your birthday!!! :D",
   "textInChatBox": "Happy birthday Vishakha Pookie!! Many many happy blah blah...",
@@ -16,7 +18,7 @@
   "smiley": ":)",
   "bigTextPart1": "S",
   "bigTextPart2": "O",
-  "wishHeading": " Happy Birthday Pookie!",
+  "wishHeading": " Happy Birthday!",
   "outroText": "Okay, now come back and tell me if you liked it.",
   "replayText": "Or click, if you want to watch it again.",
   "outroSmiley": ":)"
